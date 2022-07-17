@@ -32,7 +32,7 @@ app.use(async (ctx, next) => {
 
 // routes
 for (let key in routes) {
-  router.use(routes[key].routes());
+  router.use("/api", routes[key].routes());
 }
 
 app.use(router.routes()).use(router.allowedMethods());
